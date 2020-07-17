@@ -1,0 +1,143 @@
+﻿@model Tarea7.Models.Profesor
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <br />
+    <h3>Crear Profesor</h3>
+    <br />
+    <form asp-action="Create">
+        <div class="form-group">
+            <input class="form-control" asp-for="Cedula" placeholder="Cedula" type="text">
+            <span asp-validation-for="Cedula" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="">Fecha de nacimiento</label>
+            <input class="form-control" asp-for="FechaNacimiento" placeholder="Fecha de nacimiento" type="date" required>
+            <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="">Fecha de ingreso</label>
+            <input class="form-control" asp-for="FechaIngreso" placeholder="" type="date">
+            <span asp-validation-for="FechaIngreso" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" asp-for="Nombre" placeholder="Nombre" type="text" required maxlength="40">
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+            <br />
+            <input class="form-control" asp-for="Apellido" placeholder="Apellido" type="text" maxlength="40">
+            <span asp-validation-for="Apellido" class="text-danger"></span>
+        </div>
+
+
+
+        <div class="form-group">
+            <input class="form-control" asp-for="EstadoCivil" placeholder="Estado civil" type="text">
+            <span asp-validation-for="EstadoCivil" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" asp-for="Sexo" placeholder="Sexo" type="text">
+            <span asp-validation-for="Sexo" class="text-danger"></span>
+        </div>
+
+        <select class="form-control">
+            <option selected>Seleccione una ocupacion</option>
+            <option>ocupacion 1</option>
+            <option>ocupacion 2</option>
+            <option>ocupacion 3</option>
+            <option>ocupacion 4</option>
+            <option>ocupacion 5</option>
+            <option>ocupacion 6</option>
+            <option>ocupacion 7</option>
+            <option>ocupacion 8</option>
+            <option>ocupacion 9</option>
+            <option>ocupacion 10</option>
+        </select>
+        <br />
+        <select class="form-control">
+            <option selected>Seleccione un Tipo de sangre</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>A+</option>
+            <option>A-</option>
+        </select>
+        <br />
+        <div class="form-group">
+            <input class="form-control" asp-for="Nacionalidad" placeholder="Nacionalidad" type="text">
+            <span asp-validation-for="Nacionalidad" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <select class="form-control" asp-for="Religion">
+                <option selected>Seleccione una religion</option>
+                <option>Catolica </option>
+                <option>Evangelica</option>
+                <option>Ateo</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="form-control" asp-for="Telefono" placeholder="Telefono" type="tel">
+            <span asp-validation-for="Telefono" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" asp-for="Email" placeholder="Email" type="text">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" asp-for="Direccion" placeholder="Direccion" type="text" maxlength="100">
+            <span asp-validation-for="Direccion" class="text-danger"></span>
+        </div>
+
+        <select class="form-control">
+            <option selected>Seleccione una carrera</option>
+            <option>Medicina</option>
+            <option>Odontologia</option>
+            <option>Ing. Sistemas</option>
+            <option>Ing. Civil</option>
+            <option>Arquitectura</option>
+        </select>
+        <br />
+        <input class="form-control" asp-for="TituloGrado" placeholder="Titulo de la carrera de grado" type="text">
+        <br />
+
+        <select class="form-control">
+            <option selected>Mayor Grado academico alcanzado</option>
+            <option>Licenciatura</option>
+            <option>Ingenieria</option>
+            <option>Maestria</option>
+            <option>Doctorado</option>
+        </select>
+
+        <br />
+        <select class="form-control">
+            <option selected>Seleccione una categoria profesional</option>
+            <option>Provisional</option>
+            <option>Adscrito</option>
+            <option>Adjunto</option>
+            <option>Titular</option>
+        </select>
+        <br />
+        <select class="form-control">
+            <option selected>Seleccione una facultad</option>
+            <option>Ingenierias</option>
+            <option>Ciencias de la salud</option>
+            <option>Educacion</option>
+        </select>
+        <br />
+
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary btn-block" />
+        </div>
+    </form>
+</div>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

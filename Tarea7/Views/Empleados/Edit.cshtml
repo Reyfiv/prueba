@@ -1,0 +1,150 @@
+﻿@model Tarea7.Models.Empleado
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <br />
+    <h3>Modificar Empleados</h3>
+    <br />
+    <form asp-action="Edit">
+        <div class="form-group">
+            <input class="form-control" asp-for="Codigo" placeholder="Codigo" type="text" readonly>
+            <span asp-validation-for="Codigo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input class="form-control" asp-for="Cedula" placeholder="Cedula" type="text">
+            <span asp-validation-for="Cedula" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="">Fecha de nacimiento</label>
+            <input class="form-control" asp-for="FechaNacimiento" placeholder="Fecha de nacimiento" type="date" required>
+            <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="">Fecha de ingreso</label>
+            <input class="form-control" asp-for="FechaIngreso" placeholder="" type="date">
+            <span asp-validation-for="FechaIngreso" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" asp-for="Nombre" placeholder="Nombre" type="text" required maxlength="40">
+            <span asp-validation-for="Nombre" class="text-danger"></span>
+            <br />
+            <input class="form-control" asp-for="Apellido" placeholder="Apellido" type="text" maxlength="40">
+            <span asp-validation-for="Apellido" class="text-danger"></span>
+        </div>
+
+
+
+        <div class="form-group">
+            <input class="form-control" asp-for="EstadoCivil" placeholder="Estado civil" type="text">
+            <span asp-validation-for="EstadoCivil" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" asp-for="Sexo" placeholder="Sexo" type="text">
+            <span asp-validation-for="Sexo" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <select class="form-control" asp-for="TipoSangre">
+                <option selected>Seleccione un Tipo de sangre</option>
+                <option>O+</option>
+                <option>O-</option>
+                <option>A+</option>
+                <option>A-</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" asp-for="Nacionalidad" placeholder="Nacionalidad" type="text">
+            <span asp-validation-for="Nacionalidad" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <select class="form-control" asp-for="Religion">
+                <option selected>Seleccione una religion</option>
+                <option>Catolica </option>
+                <option>Evangelica</option>
+                <option>Ateo</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="form-control" asp-for="Telefono" placeholder="Telefono" type="tel">
+            <span asp-validation-for="Telefono" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" asp-for="Email" placeholder="Email" type="text">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" asp-for="Direccion" placeholder="Direccion" type="text" maxlength="100">
+            <span asp-validation-for="Direccion" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" asp-for="SalrioMensual" placeholder="Salario Mesual" type="number">
+            <span asp-validation-for="SalrioMensual" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <select class="form-control" asp-for="Departamento">
+                <option selected>Seleccione un Departameno</option>
+                <option>Departameno 1 </option>
+                <option>Departameno 2</option>
+                <option>Departameno 3</option>
+                <option>Departameno 4</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <input class="form-control" asp-for="NombreContEmer" placeholder="Nombre contacto de emergencia" type="text">
+            <span asp-validation-for="NombreContEmer" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" asp-for="TeledfonoContEmer" placeholder="Telefono contacto de emergencia" type="tel">
+            <span asp-validation-for="TeledfonoContEmer" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+
+            <select class="form-control" asp-for="AFP">
+                <option selected>Seleccione un AFP</option>
+                <option>AFP 1 </option>
+                <option>AFP 2</option>
+                <option>AFP 3</option>
+                <option>AFP 4</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <select class="form-control" asp-for="ARS">
+                <option selected>Seleccione un ARS</option>
+                <option>ARS 1 </option>
+                <option>ARS 2</option>
+                <option>ARS 3</option>
+                <option>ARS 4</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <textarea class="form-control" asp-for="Observaciones" placeholder="Observaciones"></textarea>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary btn-block" />
+        </div>
+
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

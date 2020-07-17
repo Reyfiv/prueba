@@ -1,0 +1,81 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<Tarea7.Models.Estudiantes>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *, ReflectionIT.Mvc.Paging
+
+@{
+    string titulo = "Listado de Estudiantes";
+    ViewData["Title"] = titulo;
+}
+
+<h3>@titulo</h3>
+
+<div>
+    <form method="get" class="form-inline" asp-action="Index">
+        <input name="filter" class="form-control" placeholder="Filtro"
+               value="@Model.RouteValue["Filter"]" />
+        <button type="submit" class="btn  btn-default">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar
+        </button>
+
+        <a asp-controller="Estudiantes" asp-action="Create" class="btn btn-primary btn-sm pull-right">
+             Crear Estudiante
+        </a>
+    </form>
+</div>
+<br />
+<div class="box box-info">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.SortableHeaderFor(model => model.IdEstudiantes)
+                </th>                
+                <th>
+                    @Html.SortableHeaderFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.SortableHeaderFor(model => model.Apellido)
+                </th>
+                <th>
+                    @Html.SortableHeaderFor(model => model.Matricula)
+                </th>
+                <th>
+                    @Html.SortableHeaderFor(model => model.Telefono)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdEstudiantes)
+                    </td>                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Matricula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        <a href="/Estudiantes/Details?id=@item.IdEstudiantes"><i class="fa fa-info-circle"></i></a> |
+                        <a href="/Estudiantes/Edit?id=@item.IdEstudiantes"><i class="fa fa-edit"></i></a> |
+                        <a href="/Estudiantes/Delete?id=@item.IdEstudiantes"><i class="fas fa-minus-circle"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <nav aria-label="Roles navigation example">
+        <vc:pager paging-list="@Model" />
+    </nav>
+</div>
+
+
